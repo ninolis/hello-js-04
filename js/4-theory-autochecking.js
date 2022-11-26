@@ -1400,7 +1400,7 @@ The result of a function call changeEven([6,10,14,18,20,23,14,17,10], 9 )) is go
 Result of code execution:
 [ 1, 12, 3, 14, 5 ]
 [ 12, 18, 3, 7, 14, 16 ]
-[ 17, 124, 168, 31, 142 ]
+[ 17, 124, 168, 31, 142 
 [ 144, 13, 81, 192, 136, 154 ]
 */
 
@@ -2754,63 +2754,3086 @@ Calling a function with random but valid arguments, returns the correct value
 
 /*
 ** THEORY
+We will pass this array of objects to the users parameter when calling the function from the task.
 
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+]
 
 ** TASK
-
+Modify the getFriends(users) function so that it returns an array of all users' friends (the friends property). Several users can have the same friends, make sure that the returned array does not contain duplicates.
 
 ** Test
-
+The variable getFriends is declared
+An arrow function with the parameter (users) is assigned to the variable getFriends
+Calling the function with the specified user array returns the array ["Sharron Pace", "Briana Decker", "Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner", "Goldie Gentry", "Aisha Tran", "Jordan Sampson", "Eddie Strong", "Jacklyn Lucas", "Linda Chapman"]
+Calling a function with random but valid arguments returns the correct value
 
  */
 
 // Javascript Editor:
 // START
 /*
+// Change code below this line
+const getFriends = (users) => {
+
+};
+// Change code above this line
 
 */
 
 // Javascript Editor:
 // FINISH
 /*
+// Change code below this line
+const getFriends = (users) =>
+  users
+    .flatMap((user) => user.friends)
+    .filter((friend, index, array) => array.indexOf(friend) === index);
+
+console.log(getFriends(users));
 
 console.log(
 */
 
 // RESULT
 /*
+Result
 
+Done
+
+Assignment 25/48
+The variable `getFriends` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `getFriends`
+Calling the function with the specified user array returns an array `['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson', 'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman']`
+Calling a function with random but valid arguments returns the correct value
 */
 
 ///////////////////////////////////////////////
-// JS V2 block-4 Autochecking  ASSIGNMENT 25/48  Status: Done
+// JS V2 block-4 Autochecking  ASSIGNMENT 26/48  Status: Done
 
 /*
 ** THEORY
+We will pass this array of objects to the users parameter when calling the function from the task.
 
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+]
 
 ** TASK
-
+Modify the getActiveUsers(users)function so that it returns an array active users whose isActive property value is true.
 
 ** Test
-
+The variable getActiveUsers is declared
+An arrow function with the parameter users is assigned to the variable getActiveUsers
+To iterate over the users parameter, use the filter() method
+Calling the function with the specified array of users returns an array of user objects named Sharlene Bush, Elma Head, Carey Barr and Sheree Anthony
+Calling a function with random but valid arguments returns the correct value
 
  */
 
 // Javascript Editor:
 // START
 /*
+// Change code below this line
+const getActiveUsers = (users) => {
+   
+};
+// Change code above this line
 
 */
 
 // Javascript Editor:
 // FINISH
 /*
+// Change code below this line
+const getActiveUsers = (users) => users.filter((user) => user.isActive === true);
+// Change code above this line
+
+console.log(getActiveUsers(users));
+console.log(
+*/
+
+// RESULT
+/*
+The variable `getActiveUsers` is declared
+An arrow function with the parameter `users` is assigned to the variable `getActiveUsers`
+To iterate over the `users` parameter, use the `filter()` method
+Calling the function with the specified array of users returns an array of user objects named `Sharlene Bush`, `Elma Head`, `Carey Barr` and `Sheree Anthony`
+Calling a function with random but valid arguments returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 27/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function from the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+]
+
+** TASK
+Modify the getInactiveUsers (users) function so that it returns an array of inactive users whose isActive property is false.
+
+** Test
+The variable getInactiveUsers is declared.
+An arrow function with the parameter users is assigned to the variable getInactiveUsers
+To iterate over the users parameter, the filter() method is used
+Calling the function with the specified array of users returns an array of user objects named Moore Hensley, Ross Vazquez and Blackburn Dotson
+Calling a function with random but valid arguments, returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const getInactiveUsers = (users) => {
+   
+};
+// Change code above this line
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const getInactiveUsers = (users) => users.filter((user) => user.isActive === false);
+// Change code above this line
+
+console.log(getInactiveUsers(users));
 
 console.log(
 */
 
 // RESULT
 /*
+Result
 
+Done
+
+Assignment 27/48
+The variable `getInactiveUsers` is declared.
+An arrow function with the parameter (`users`) is assigned to the variable `getInactiveUsers`
+To iterate over the `users` parameter, the `filter()` method is used
+Calling the function with the specified array of users returns an array of user objects named `Sharlene Bush`, `Elma Head`, `Carey Barr` and `Sheree Anthony`
+Calling a function with random but valid arguments, returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 28/48  Status: Done
+
+/*
+** THEORY
+If the filter(callback) method is used to find all elements that satisfy the condition, then the find(callback) method allows you to find and return the first matching element, after that the array iteration stops. That is, it searches until the first match.
+
+array.find((element, index, array) => {
+  // body of the callback function
+});
+Does not change the original array.
+This method iterates over the original array element by element.
+Returns the first element that satisfies the condition, that is, when the callback returns true.
+If no element matches, that is, the callback returned false for all elements, the method returns undefined.
+The find() method is used for one task - finding an element by a unique property value. For example, searching for a user by mail, a car by serial number, a book by name, etc.
+
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+colorPickerOptions.find((option) => option.label === "white"); // undefined
+
+** TASK
+Using the find() method, modify the code so that:
+
+In the variable bookWithTitle, the object of a book whose title (property title) coincides with the value of the variable BOOK_TITLE is obtained.
+In the variable bookByAuthor, the object of the book whose author (property author) coincides with the value of the variable AUTHOR is obtained.
+
+** Test
+The variable books is declared
+The value of the variable books is an array
+The variable BOOK_TITLE is declared
+The value of the variable BOOK_TITLE is the string "The Dream of a Ridiculous Man"
+The variable AUTHOR is declared
+The value of the variable AUTHOR is the string "Robert Sheckley"
+The variable bookWithTitle is declared
+The value of the bookWithTitle variable is the book object with the title above, "The Dream of a Ridiculous Man"
+The variable bookByAuthor is declared
+The value of the variable bookByAuthor is an object of the author's book, "Robert Sheckley"
+To iterate over the books array, the find() method was used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
+// Change code below this line
+
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
+// Change code below this line
+
+const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+const bookByAuthor = books.find((book) => book.author === AUTHOR);
+
+console.log(bookWithTitle);
+console.log(bookByAuthor);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 28/48
+The variable `books` is declared
+The variable `BOOK_TITLE` is declared
+The variable `AUTHOR` is declared
+The variable `bookWithTitle` is declared
+The variable `bookByAuthor` is declared
+The value of the variable `books` is an array
+The value of the variable `BOOK_TITLE` is the string `'The Dream of a Ridiculous Man'
+The value of the variable `AUTHOR` is the string `'Robert Sheckley'`
+The value of the variable `bookWithTitle` is the book object with the title above `'The Dream of a Ridiculous Man'
+The value of the variable `bookByAuthor` is the book object by `'Robert Sheckley'`
+The `find()`method was used to iterate over the array `books`
+
+Result of code execution:
+{
+  title: 'The Dream of a Ridiculous Man',
+  author: 'Fyodor Dostoevsky',
+  rating: 7.75
+}
+{
+  title: 'Beside Still Waters',
+  author: 'Robert Sheckley',
+  rating: 8.51
+}
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 29/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the getUserWithEmail(users, email) function so that it returns a user object whose email address (the email property) matches the value of the email parameter.
+
+** Test
+The variable getUserWithEmail(users, email) is declared
+To iterate over the users parameter, the find () method is used
+If the value of the email parameter is "shereeanthony@kog.com", the function returns a user object named Sheree Anthony
+If the value of the email parameter is "elmahead@omatom.com", the function returns a user object named Elma Head
+If the value of the email parameter is "blackburndotson@furnigeer.com", the function returns a user object named Blackburn Dotson
+If the users array does not contain a user with email address from the email parameter, the function returns undefined
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const getUserWithEmail = (users, email) => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code above this line
+const getUserWithEmail = (users, email) => users.find((user) => user.email === email);
+// Change code above this line
+
+console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
+console.log(getUserWithEmail(users, "elmahead@omatom.com"));
+console.log(getUserWithEmail(users, "blackburndotson@furnigeer.com"));
+console.log(
+*/
+
+// RESULT
+/*
+The variable `getUserWithEmail` is declared
+An arrow function with parameters `(users, email))` is assigned to variable `getUserWithEmail`
+To iterate over the `users` parameter, the `find ()` method is used
+If the value of the `email` parameter is `shereeanthony@kog.com`, the function returns a user object named `Sheree Anthony`
+If the value of the `email` parameter is `elmahead@omatom.com`, the function returns a user object named `Elma Head`
+If the value of the `email` parameter is `blackburndotson@furnigeer.com`, the function returns a user object named `Blackburn Dotson`
+If the `users` array does not contain a user with mail from the `email` parameter, the function returns `undefined`
+Calling a function with random but valid arguments, returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 30/48  Status: Done
+
+/*
+** THEORY
+The every(callback) method checks if all elements of the array pass the test provided by the callback function. Returns true or false.
+
+array.every((element, index, array) => {
+  //  body of the callback function
+});
+Does not change the original array.
+The method iterates over the original array element by element.
+Returns true if all elements of the array satisfy the condition.
+Returns false if at least one element of the array does not satisfy the condition.
+The array iteration is terminated if the callback returns false.
+// Are all elements greater than or equal to zero? - Yes
+[1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// Are all elements greater than or equal to zero? - No
+[1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+When working with an array of objects, the value of some of their properties is checked.
+
+** TASK
+Using the every() method, modify the code so that:
+
+In the variable eachElementInFirstIsEven, there is the result of checking all elements of the array firstArray for evenness.
+In the variable eachElementInFirstIsOdd, there is the result of checking all elements of the array firstArray for oddness.
+In the variable eachElementInSecondIsEven, there is the result of checking all elements of the array secondArray for evenness.
+In the variable eachElementInSecondIsOdd, there is the result of checking all elements of the array secondArray for oddness.
+In the variable eachElementInThirdIsEven, there is the result of checking all elements of the array thirdArray for evenness.
+In the variable eachElementInThirdIsOdd, there is the result of checking all elements of the array thirdArray for oddness.
+
+** Test
+The variable firstArray is declared
+The value of the variable firstArray is the array [26, 94, 36, 18]
+The variable secondArray is declared
+The value of the variable secondArray is the array [17, 61, 23]
+The variable thirdArray is declared
+The value of the variable thirdArray is the array [17, 26, 94, 61, 36, 23, 18]
+The variable eachElementInFirstIsEven is declared
+The value of the variable eachElementInFirstIsEven is boolean true
+The variable eachElementInFirstIsOdd is declared
+The value of the variable eachElementInFirstIsOdd is boolean false
+The variable eachElementInSecondIsEven is declared
+The value of the variable eachElementInSecondIsEven is boolean false
+The variable eachElementInSecondIsOdd is declared
+The value of the variable eachElementInSecondIsOdd is boolean true
+The variable eachElementInThirdIsEven is declared
+The value of the variable eachElementInThirdIsEven is boolean false
+The variable eachElementInThirdIsOdd is declared
+The value of the variable eachElementInThirdIsOdd is boolean false
+To iterate over arrays, the every() method is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change code below this line
+
+const eachElementInFirstIsEven = firstArray;
+const eachElementInFirstIsOdd = firstArray;
+
+const eachElementInSecondIsEven = secondArray;
+const eachElementInSecondIsOdd = secondArray;
+
+const eachElementInThirdIsEven = thirdArray;
+const eachElementInThirdIsOdd = thirdArray;
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change code below this line
+
+const eachElementInFirstIsEven = firstArray.every((value) => value % 2 === 0);
+const eachElementInFirstIsOdd = firstArray.every((value) => value % 2 !== 0);
+
+const eachElementInSecondIsEven = secondArray.every((value) => value % 2 === 0);
+const eachElementInSecondIsOdd = secondArray.every((value) => value % 2 !== 0);
+
+const eachElementInThirdIsEven = thirdArray.every((value) => value % 2 === 0);
+const eachElementInThirdIsOdd = thirdArray.every((value) => value % 2 !== 0);
+
+console.log(eachElementInFirstIsEven);
+console.log(eachElementInFirstIsOdd);
+
+console.log(eachElementInSecondIsEven);
+console.log(eachElementInSecondIsOdd);
+
+console.log(eachElementInThirdIsEven);
+console.log(eachElementInThirdIsOdd);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 30/48
+The variable `firstArray` is declared
+The variable `secondArray` is declared
+The variable `thirdArray` is declared
+The variable `eachElementInFirstIsEven` is declared
+The variable `eachElementInFirstIsOdd` is declared
+The variable `eachElementInSecondIsEven` is declared
+The variable `eachElementInSecondIsOdd` is declared
+The variable `eachElementInThirdIsEven` is declared
+The variable `eachElementInThirdIsOdd` is declared
+The value of the variable `firstArray` is the array `[26, 94, 36, 18]`
+The value of the variable `secondArray` is the array `[17, 61, 23]`
+The value of the variable `thirdArray` is the array `[17, 26, 94, 61, 36, 23, 18]`
+The value of the variable `eachElementInFirstIsEven` is `true`
+The value of the variable `eachElementInFirstIsOdd` is `false`
+The value of the variable `eachElementInSecondIsEven` is `false`
+The value of the variable `eachElementInSecondIsOdd` is `true`
+The value of the variable `eachElementInThirdIsEven` is `false`
+The value of the variable `eachElementInThirdIsOdd` is `false`
+The `every()` method was used to iterate over the arrays
+
+Result of code execution:
+true
+false
+false
+true
+false
+false
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 31/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the isEveryUserActive(users) function so that it checks if all users are currently active (the isActive property) and returns true or false.
+
+** Test
+The variable isEveryUserActive is declared
+An arrow function with the parameter (users) is assigned to the variable isEveryUserActive
+To iterate over the users parameter, the every() method is used
+Calling the function with the specified array of users returns false
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const isEveryUserActive = (users) => {
+   
+};
+// Change code above this line
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const isEveryUserActive = (users) => users.every((user) => user.isActive === true);
+// Change code above this line
+
+console.log(isEveryUserActive(users));
+// const isEveryUserActive = (users) => users.every((user) => user.isActive === true);
+// const isEveryUserActive = users.every((user) => user.isActive === true);
+
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 31/48
+The variable `isEveryUserActive` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `isEveryUserActive`
+To iterate over the `users` parameter, the `every()` method is used
+Calling the function with the specified array of users returns `false`
+Calling a function with random but valid arguments, returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 32/48  Status: Done
+
+/*
+** THEORY
+The some(callback) method checks if at least one element of the array passes the test provided by the callback function. Returns true or false.
+
+array.some((element, index, array) => {
+  // Callback function body
+});
+Does not change the original array.
+The method iterates over the original array element by element.
+Returns true if at least one element of the array satisfies the condition.
+Returns false if no element of the array satisfies the condition.
+The array iteration is terminated if the callback returns true.
+// Is there at least one element greater than or equal to zero? - Yes
+[1, 2, 3, 4, 5].some(value => value >= 0); // true
+
+// Is there at least one element greater than or equal to zero? - Yes
+[-7, -20, 3, -10, -14].some(value => value >= 0); // true
+
+// Is there at least one element less than zero? - No
+[1, 2, 3, 4, 5].some(value => value < 0); // false
+
+// Is there at least one element less than zero? - Yes
+[1, 2, 3, -10, 4, 5].some(value => value < 0); // true
+
+** TASK
+Using the some() method, modify the code so that:
+
+In the variable anyElementInFirstIsEven, there is the result of checking for the presence of even elements in the array firstArray.
+In the variable anyElementInFirstIsOdd, there is the result of checking for the presence of odd elements in the array firstArray.
+In the variable anyElementInSecondIsEven, there is the result of checking the presence of even elements in the array secondArray.
+In the variable anyElementInSecondIsOdd, there is the result of checking for the presence of odd elements in the array secondArray.
+In the variable anyElementInThirdIsEven, there is the result of checking the presence of even elements in the array thirdArray.
+In the variable anyElementInThirdIsOdd, there is the result of checking for the presence of odd elements in the array thirdArray.
+
+** Test
+The variable firstArray is declared
+The value of the variable firstArray is the array [26, 94, 36, 18]
+The variable secondArray is declared
+The value of the variable secondArray is the array [17, 61, 23]
+The variable thirdArray is declared
+The value of the variable thirdArray is the array [17, 26, 94, 61, 36, 23, 18]
+The variable anyElementInFirstIsEven is declared
+The value of the variable anyElementInFirstIsEven is boolean true
+The variable anyElementInFirstIsOdd is declared
+The value of the variable anyElementInFirstIsOdd is boolean false
+The variable anyElementInSecondIsEven is declared
+The value of the variable anyElementInSecondIsEven is boolean false
+The variable anyElementInSecondIsOdd is declared
+The value of the variable anyElementInSecondIsOdd is boolean true
+The variable anyElementInThirdIsEven is declared
+The value of the variable anyElementInThirdIsEven is boolean true
+The variable anyElementInThirdIsOdd is declared
+The value of the variable anyElementInThirdIsOdd is boolean true
+To iterate over arrays, the some() method was used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
+
+const anyElementInFirstIsEven = firstArray;
+const anyElementInFirstIsOdd = firstArray;
+
+const anyElementInSecondIsEven = secondArray;
+const anyElementInSecondIsOdd = secondArray;
+
+const anyElementInThirdIsEven = thirdArray;
+const anyElementInThirdIsOdd = thirdArray;
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
+
+const anyElementInFirstIsEven = firstArray.some((value) => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some((value) => value % 2 !== 0);
+
+const anyElementInSecondIsEven = secondArray.some((value) => value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some((value) => value % 2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some((value) => value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some((value) => value % 2 !== 0);
+
+console.log(anyElementInFirstIsEven);
+console.log(anyElementInFirstIsOdd);
+
+console.log(anyElementInSecondIsEven);
+console.log(anyElementInSecondIsOdd);
+
+console.log(anyElementInThirdIsEven);
+console.log(anyElementInThirdIsOdd);
+
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 32/48
+The variable `firstArray` is declared
+The variable `secondArray` is declared
+The variable `thirdArray` is declared
+The variable `anyElementInFirstIsEven` is declared
+The variable `anyElementInFirstIsOdd` is declared
+The variable `anyElementInSecondIsEven` is declared
+The variable `anyElementInSecondIsOdd` is declared
+The variable `anyElementInThirdIsEven` is declared
+The variable `anyElementInThirdIsOdd` is declared
+The value of the variable `firstArray` is the array `[26, 94, 36, 18]`
+The value of the variable `secondArray` is the array `[17, 61, 23]`
+The value of the variable `thirdArray` is the array `[17, 26, 94, 61, 36, 23, 18]`
+The value of the variable `anyElementInFirstIsEven` is `true`
+The value of the variable `anyElementInFirstIsOdd` is `false`
+The value of the variable `anyElementInSecondIsEven` is `false`
+The value of the variable `anyElementInSecondIsOdd` is `true`
+The value of the variable `anyElementInThirdIsEven` is `true`
+The value of the variable `anyElementInThirdIsOdd` is `true`
+The `some()` method was used to iterate over the arrays
+
+Result of code execution:
+true
+false
+false
+true
+true
+true
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 33/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+users =
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the isAnyUserActive(users) function so that it checks for active users (the isActive property) and returns true or false.
+
+** Test
+The variable isAnyUserActive is declared
+To iterate over the users parameter, the some() method was used
+Calling the function with the specified user array returns true
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const isAnyUserActive = users => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const isAnyUserActive = (users) => users.some((user) => user.isActive === true);
+// Change code above this line
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 33/48
+The variable `isAnyUserActive` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `isAnyUserActive`
+To iterate over the `users` parameter, the `some()` method was used
+Calling the function with the specified user array returns true
+Calling a function with random but valid arguments returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 34/48  Status: Done
+
+/*
+** THEORY
+The reduce(callback, initialValue) method is used to sequentially process each element of the array, storing the intermediate result as an accumulator. A bit more difficult to learn than others, but the result is worth it.
+
+array.reduce((previousValue, element, index, array) => {
+  // body of the callback function
+}, initialValue);
+Does not change the original array.
+The method iterates over the original array element by element .
+Returns anything.
+Does anything.
+The easiest way to imagine how it works is by calculating the sum of array elements.
+
+const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+  return previousValue + number;
+}, 0);
+
+console.log(total); // 32
+The first parameter of the callback function (previousValue) is the accumulator, that is, the intermediate result. The value returned by the callback function at the current iteration will be the value of this parameter at the next iteration.
+
+For reduce() an optional initial value of the accumulator - the initialValue parameter can be passed as the second argument.
+
+# First, the reduce() method creates an internal accumulator variable and
+# assigns to it the value of the initialValue parameter or the first element
+# of the array to iterate over, if initialValue is not specified.
+previousValue = 0
+
+# Next, the callback function is called for each element of the array. The present value
+# of the previousValue parameter is what the callback function returned in the last iteration.
+Iteration 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+Iteration 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+Iteration 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+Iteration 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+Iteration 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+# After iterating over the entire array, reduce() method returns the value of the accumulator.
+Result - 32
+That is, the reduce() method is used when it is necessary to take "many" and reduce to "one". In everyday tasks, its application comes down to working with numbers.
+
+** TASK
+The gaming service needs the functionality of calculating the average time spent on games. Modify the code so that the totalPlayTime variable contains the total playing time from the playtimes array.
+
+** Test
+The variable players is declared
+The value of the variable players is an object of the players with the playing time of each player
+The variable playtimes is declared
+The value of the variable playtimes is the array [1270, 468, 710, 244]
+The variable totalPlayTime is declared
+The value of the variable totalPlayTime is the number 2692
+To iterate over the array playtimes, use the method reduce()
+The variable averagePlayTime is declared
+The value of the variable averagePlayTime is a number
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Change code below this line
+
+const totalPlayTime = playtimes.;
+
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length;
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Change code below this line
+
+const totalPlayTime = playtimes.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length;
+console.log(averagePlayTime);
+
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 34/48
+The variable `players` is declared
+The variable `playtimes` is declared
+The variable `totalPlayTime` is declared
+The variable `averagePlayTime` is declared
+The value of the variable `players` is an object of the players with the playing time of each
+The value of the variable `playtimes` is an array `[1270, 468, 710, 244]`
+The value of the variable `totalPlayTime` is the number `2692`
+The value of the variable `averagePlayTime` is the number `673`
+To iterate over the array `playtimes`, use the method `reduce()`
+
+Result of code execution:
+673
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 35/48  Status: Done
+
+/*
+** THEORY
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+// The name of the accumulator can be arbitrary, it's just a function parameter
+const totalScore = students.reduce((total, student) => {
+  return total + student.score;
+}, 0);
+
+const averageScore = totalScore / students.length;
+
+** TASK
+Our service needs to calculate the average time spent on one game for each player, and get the total amount of these times. You can calculate the time for each of the players by dividing its time (the playtime property) by the number of games (the gamesPlayed property).
+
+** Test
+The variable players is declared
+The value of the variable players is an array of player objects
+The variable totalAveragePlaytimePerGame is declared
+The value of the variable totalAveragePlaytimePerGame is the number 1023
+To iterate over the array players, the method reduce() is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players;
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players.reduce(
+  (total, player) => {
+  return total + player.playtime / player.gamesPlayed ;
+}, 0);
+
+console.log(totalAveragePlaytimePerGame);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 35/48
+The variable `players` is declared
+The variable `totalAveragePlaytimePerGame` is declared
+The value of the variable `players` is an array of player objects
+The value of the variable `totalAveragePlaytimePerGame` is the number `1023`
+To iterate over the array `players`, the method `reduce()` is used
+
+Result of code execution:
+1023
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 36/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function from the task.
+users = 
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the calculateTotalBalance(users) function so that it calculates and returns the sum of all funds (the balance property) stored by users from the users array.
+
+** Test
+The variable calculateTotalBalance is declared
+An arrow function with the parameter (users) is assigned to the calculateTotalBalance variable
+To iterate over the users parameter, the reduce() method is used
+Calling the function with the specified array of users returns the number 20916
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const calculateTotalBalance = users => {
+
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const calculateTotalBalance = users => users.reduce(
+  (totalBalance, user) => {
+  return totalBalance + user.balance;
+}, 0);
+// Change code above this line
+console.log(calculateTotalBalance);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 36/48
+The variable `calculateTotalBalance` is declared
+An arrow function with the parameter `(users)` is assigned to the `calculateTotalBalance` variable
+To iterate over the `users` parameter, the `reduce()` method is used
+Calling the function with the specified array of users returns the number `20916`
+Calling a function with random but valid arguments returns the correct value
+
+Result of code execution:
+20916
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 37/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function from the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the getTotalFriendCount(users) function so that it counts and returns the total number of friends (the friends property) of all users from the users array.
+
+** Test
+The variable getTotalFriendCount is declared
+An arrow function with the parameter (users) is assigned to the variable getTotalFriendCount
+To iterate over the users parameter, the reduce() method was used
+Calling the function with the specified user array returns the number 14
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const getTotalFriendCount = users => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const getTotalFriendCount = (users) =>
+  users.reduce((totalFriends, user) => {
+    return totalFriends + user.friends.length;
+  }, 0);
+// Change code above this line
+
+console.log()
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 37/48
+The variable `getTotalFriendCount` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `getTotalFriendCount`
+To iterate over the `users` parameter, the `reduce()` method was used
+Calling the function with the specified user array returns the number `14`
+Calling a function with random but valid arguments returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 38/48  Status: Done
+
+/*
+** THEORY
+The sort () method sorts the elements of an array, but unlike other iterating methods it sorts the original array.
+
+Sorts and modifies the original array.
+Returns the modified array, that is, a reference to the sorted source.
+Sorts in ascending order by default.
+Sorting occurs by converting the values ​​to a string and comparing the ordinal numbers in the Unicode table.
+An array of numbers, such as the one below, will be sorted in ascending order.
+
+const scores = [61, 19, 74, 35, 92, 56];
+scores.sort();
+console.log(scores); // [19, 35, 56, 61, 74, 92]
+However, since the default values ​​are converted to a string, the standard sorting of numbers works in an unusual way. Therefore, in the next exercise, we will look at how to set a custom sort order.
+
+const scores = [27, 2, 41, 4, 7, 3, 75];
+scores.sort();
+console.log(scores); // [2, 27, 3, 4, 41, 7, 75]
+The array of strings is sorted alphabetically.
+
+const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+students.sort();
+console.log(students); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+In this case, the ordinal number of capital letters is less than that of uppercase letters.
+
+const letters = ["b", "B", "a", "A", "c", "C"];
+letters.sort();
+console.log(letters); // ["A", "B", "C", "a", "b", "c"]
+Due to the fact that the original array is sorted, the principle of purity of functions is violated and it is impossible to conveniently make several derived collections based on the original one. For example, what if you needed to make a collection sorted in ascending order, and another sorted in descending. Therefore, before sorting, make a full copy of the original array and sort it.
+
+const scores = [61, 19, 74, 35, 92, 56];
+const ascendingScores = [...scores].sort();
+
+console.log(scores); // [61, 19, 74, 35, 92, 56]
+console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+** TASK
+Modify the code so that the ascendingReleaseDates variable contains an ascending copy of the releaseDates array, and the alphabeticalAuthors variable contains a copy of the authors array of authors' names sorted in alphabetical order.
+
+** Test
+The variable releaseDates is declared
+The value of the releaseDates variable is the array [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+The variable authors is declared
+The value of the variable authors is the array ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky"]
+The variable ascendingReleaseDates is declared
+The value of the variable ascendingReleaseDates is the array [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+The variable alphabeticalAuthors is declared
+The value of the variable alphabeticalAuthors is the array ["Bernard Cornwell", "Tanith Lee", "Robert Sheckley", "Fyodor Dostoevsky"]
+The sort() method is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+];
+// Change code below this line
+
+const ascendingReleaseDates = releaseDates
+
+const alphabeticalAuthors = authors;
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+];
+// Change code below this line
+
+const ascendingReleaseDates = [...releaseDates].sort();
+const alphabeticalAuthors = [...authors].sort();
+
+console.log(ascendingReleaseDates)
+console.log(alphabeticalAuthors)
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 38/48
+The variable `releaseDates` is declared
+The variable `authors` is declared
+The variable `ascendingReleaseDates` is declared
+The variable `alphabeticalAuthors` is declared
+The value of the variable `releaseDates` is the array `[2016, 1967, 2008, 1984, 1973, 2012, 1997]`
+The value of the variable `authors` is the array `['Tanith Lee', 'Bernard Cornwell', 'Robert Sheckley', 'Fyodor Dostoevsky']`
+The value of the variable `ascendingReleaseDates` is the array`[1967, 1973, 1984, 1997, 2008, 2012, 2016]`
+The value of the variable `alphabeticalAuthors` is the array `['Bernard Cornwell', 'Tanith Lee', 'Robert Sheckley', 'Fyodor Dostoevsky']`
+To iterate over the array `authors`, the method `sort()` is used
+
+Result of code execution:
+[
+  1967, 1973,
+  1984, 1997,
+  2008, 2012,
+  2016
+]
+[
+  'Bernard Cornwell',
+  'Fyodor Dostoevsky',
+  'Robert Sheckley',
+  'Tanith Lee'
+]
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 39/48  Status: Done
+
+/*
+** THEORY
+To specify a custom sort order, the sort(compareFunction) method needs to pass a callback function with two parameters. This is a compare function, the sort order depends on its result. The sort() method will call the compare function for two arbitrary elements.
+
+array.sort((a, b) => {
+  // Callback function body
+});
+a is the first element to compare.
+b is the second element to compare.
+If the call to compareFunction(a, b) returns any negative value, that is, a is less than b, sorting will put a before b. This is an ascending sort.
+
+const scores = [61, 19, 74, 35, 92, 56];
+const ascendingScores = [...scores].sort((a, b) => a - b);
+console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+If the call to compareFunction(a, b) returns any positive value greater than zero, that is, b is greater than a, the sort will put b before a. This is a descending sort.
+
+const scores = [61, 19, 74, 35, 92, 56];
+const descendingScores = [...scores].sort((a, b) => b - a);
+console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+If the call to compareFunction(a, b) returns 0, sorting will leave a and b unchanged in relation to each other, but sort them in relation to all other elements. But it doesn't really matter what to return if their mutual order doesn't matter.
+
+** TASK
+The online library needs to display books sorted by publication date, ascending or descending order. Modify the code so that the ascendingReleaseDates variable contains a copy of the releaseDates array sorted in ascending order, and the descendingReleaseDates variable contains a copy sorted in descending order.
+
+** Test
+The variable releaseDates is declared
+The value of the releaseDates variable is the array [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+The variable ascendingReleaseDates is declared
+The value of the variable ascendingReleaseDates is the array [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+The variable descendingReleaseDatesis declared
+The value of the variable descendingReleaseDates is the array [2016, 2012, 2008, 1997, 1984, 1973, 1967]
+The sort() method is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Change code below this line
+
+const ascendingReleaseDates = releaseDates;
+
+const descendingReleaseDates = releaseDates;
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Change code below this line
+
+const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+
+console.log(ascendingReleaseDates); //[1967, 1973, 1984, 1997, 2008, 2012, 2016]
+console.log(descendingReleaseDates); // [2016, 2012, 2008, 1997, 1984, 1973, 1967]
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 39/48
+The variable `releaseDates` is declared
+The variable `ascendingReleaseDates` is declared
+The variable `descendingReleaseDates` is declared
+The value of the variable `releaseDates` is the array `[2016, 1967, 2008, 1984, 1973, 2012, 1997]`
+The value of the variable `ascendingReleaseDates` is the array `[1967, 1973, 1984, 1997, 2008, 2012, 2016]`
+The value of the variable `descendingReleaseDates` is the array `[2016, 2012, 2008, 1997, 1984, 1973, 1967]`
+To iterate over the `releaseDates` array, the `sort()` method is used`
+
+Result of code execution:
+[
+  1967, 1973,
+  1984, 1997,
+  2008, 2012,
+  2016
+]
+[
+  2016, 2012,
+  2008, 1997,
+  1984, 1973,
+  1967
+]
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 40/48  Status: Done
+
+/*
+** THEORY
+To sort strings alphabetically, ascending or descending, use the localeCompare() string method.
+
+firstString.localeCompare(secondString)
+It is called on the string to be compared (firstString) with the one passed as an argument (secondString).
+
+"a".localeCompare("b"); // -1
+"b".localeCompare("a"); // 1
+"a".localeCompare("a"); // 0
+"b".localeCompare("b"); // 0
+Returns a negative value if firstString must be before secondString.
+Returns a positive value greater than zero if firstString must be after secondString.
+If the strings are the same, zero is returned.
+This is useful when sorting strings, since the sort() method expects the same values ​​from the callback function.
+
+const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+
+const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+console.log(inAlphabetOrder); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+
+const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
+console.log(inReversedOrder); // [ "Solomon", "Kai", "Jacob", "Ganymede", "Artemis", "Adrian" ]
+
+** TASK
+The online library needs to display books sorted by author, in alphabetical and reverse alphabetical order. Modify the code so that the authorsInAlphabetOrder variable is an alphabetically sorted copy of the authors array, and the authorsInReversedOrder variable has a copy sorted in reverse alphabetical order.
+
+** Test
+The variable authors is declared
+The value of the variable authors is the array ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky", "Howard Lovecraft"]
+The variable authorsInAlphabetOrder is declared
+The value of the variable authorsInAlphabetOrder is the array ["Bernard Cornwell", "Fyodor Dostoevsky", "Howard Lovecraft", "Robert Sheckley", "Tanith Lee"]
+The variable authorsInReversedOrder is declared
+The value of the variable authorsInReversedOrder is the array ["Tanith Lee", "Robert Sheckley", "Howard Lovecraft", "Fyodor Dostoevsky", "Bernard Cornwell"]
+The sort() method is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
+
+const authorsInAlphabetOrder = authors;
+
+const authorsInReversedOrder = authors;
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
+
+const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+
+console.log(authorsInAlphabetOrder);
+console.log(authorsInReversedOrder);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 40/48
+The variable `authors` is declared
+The variable `authorsInAlphabetOrder` is declared
+The variable `authorsInReversedOrder` is declared
+The value of the variable `authors` is the array `['Tanith Lee', 'Bernard Cornwell', 'Robert Sheckley', 'Fyodor Dostoevsky', 'Howard Lovecraft']`
+The value of the variable `authorsInAlphabetOrder` is the array `['Bernard Cornwell', 'Fyodor Dostoevsky', 'Howard Lovecraft', 'Robert Sheckley', 'Tanith Lee']`
+The value of the variable `authorsInReversedOrder` is the array `['Tanith Lee', 'Robert Sheckley', 'Howard Lovecraft', 'Fyodor Dostoevsky', 'Bernard Cornwell']`
+To iterate over the array `authors`, the `sort()` method is used
+Result of code execution:
+[
+  'Bernard Cornwell',
+  'Fyodor Dostoevsky',
+  'Howard Lovecraft',
+  'Robert Sheckley',
+  'Tanith Lee'
+]
+[
+  'Tanith Lee',
+  'Robert Sheckley',
+  'Howard Lovecraft',
+  'Fyodor Dostoevsky',
+  'Bernard Cornwell'
+]
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 41/48  Status: Done
+
+/*
+** THEORY
+When working with an array of objects, sorting is performed by the numeric or string value of some property. For example, there is a group of students with test scores. It is necessary to sort the array of objects in ascending and descending order of the number of scores, and by the student's name.
+
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+];
+
+const inAscendingScoreOrder = [...students].sort(
+  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+);
+
+const inDescendingScoreOrder = [...students].sort(
+  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+);
+
+const inAlphabeticalOrder = [...students].sort((firstStudent, secondStudent) =>
+  firstStudent.name.localeCompare(secondStudent.name)
+);
+
+** TASK
+Modify the code so that:
+
+The sortedByAuthorName variable contains an array of books sorted by the author's name in alphabetical order.
+The sortedByReversedAuthorName variable contains an array of books sorted by author name in reverse alphabetical order.
+The sortedByAscendingRating variable contains an array of books sorted in ascending order of rating.
+The sortedByDescentingRating variable has an array of books sorted in descending order of rating.
+
+** Test
+The variable books is declared
+The value of the variable books is the original array of book objects
+The variable sortedByAuthorName is declared
+The value of the variable sortedByAuthorName is an array of books sorted by author name in alphabetical order
+The variable sortedByReversedAuthorName is declared
+The value of the variable sortedByReversedAuthorName is an array of books sorted by author name in reverse alphabetical order
+The variable sortedByAscendingRating is declared
+The value of the variable sortedByAscendingRating is an array of books sorted in ascending order of rating
+The variable sortedByDescentingRating is declared
+The value of the variable sortedByDescentingRating is an array of books sorted in descending order of rating
+To iterate over the array books the sort() method is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const sortedByAuthorName = books;
+
+const sortedByReversedAuthorName = books;
+
+const sortedByAscendingRating = books;
+
+const sortedByDescentingRating = books;
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) => (firstBook.author).localeCompare(secondBook.author));
+
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) => (secondBook.author).localeCompare(firstBook.author));
+
+const sortedByAscendingRating = [...books].sort((firstBook, secondBook) => firstBook.rating - secondBook.rating);
+
+const sortedByDescentingRating = [...books].sort((firstBook, secondBook) => secondBook.rating - firstBook.rating);
+
+console.log(sortedByAuthorName);
+console.log(sortedByReversedAuthorName);
+console.log(sortedByAscendingRating);
+console.log(sortedByDescentingRating);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 41/48
+The variable `books` is declared
+The variable `sortedByAuthorName` is declared
+The variable `sortedByReversedAuthorName` is declared
+The variable `sortedByAscendingRating` is declared
+The variable `sortedByDescentingRating` is declared
+The value of the variable `books` is the original array of book objects
+The value of the variable `sortedByAuthorName` is an array of books sorted alphabetically by author name
+The value of the variable `sortedByReversedAuthorName` is an array of books sorted by author name in reverse alphabetical order
+The value of the variable `sortedByAscendingRating` is an array of books sorted in ascending order of rating
+The value of the variable `sortedByDescentingRating` is an array of books sorted in descending order of rating
+The `sort()` method is used to iterate over the array `books`
+Result of code execution:
+[
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38
+  },
+  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 }
+]
+[
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75
+  },
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38
+  },
+  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 }
+]
+[
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51
+  },
+  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 }
+]
+[
+  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51
+  },
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75
+  }
+]
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 42/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function from the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the sortByAscendingBalance(users) function so that it returns an array of users sorted in ascending order of their balance (the balance property).
+
+** Test
+The variable sortByAscendingBalance is declared
+An arrow function with the parameter (users) is assigned to the variable sortByAscendingBalance
+The value of the users parameter is not changed
+Calling the function with the specified array of users returns a new array of users sorted in ascending order of their balance
+Calling a function with random but valid arguments returns the correct value
+To iterate over the users parameter, the sort() method is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const sortByAscendingBalance = users => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const sortByAscendingBalance = users => [...users].sort((userA, userB) => userA.balance - userB.balance);
+// Change code above this line
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 42/48
+The variable `sortByAscendingBalance` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `sortByAscendingBalance
+The value of the `users` parameter is not changed
+To iterate over the `users` parameter, the `sort()` method is used
+Calling the function with the specified array of users returns a new array of users sorted in ascending order of their balance
+Calling a function with random but valid arguments returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 43/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the sortByDescendingFriendCount(users) function so that it returns an array of users sorted in descending order by the number of their friends (the friends property).
+
+** Test
+The variable sortByDescendingFriendCount is declared
+An arrow function with the parameter (users) is assigned to the variable sortByDescendingFriendCount
+The value of the users parameter is not changed
+To iterate over the users parameter, the sort() method was used
+Calling the function with the specified array of users returns a new array of users sorted in descending order by the number of their friends
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const sortByDescendingFriendCount = users => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const sortByDescendingFriendCount = users => [...users].sort((userA, userB) => userB.friends.length - userA.friends.length);
+// Change code above this line
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 43/48
+The variable `sortByDescendingFriendCount` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `sortByDescendingFriendCount`
+The value of the `users` parameter is not changed
+To iterate over the `users` parameter, the `sort()` method was used
+Calling the function with the specified array of users returns a new array of users sorted in descending order by the number of their friends
+Calling a function with random but valid arguments returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 44/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the sortByName (users) function so that it returns an array of users sorted by their name (the name property) in alphabetical order.
+
+** Test
+The variable sortByName is declared
+An arrow function with the parameter (users) is assigned to the variable sortByName
+The value of the users parameter is not changed
+To iterate over the users parameter, the sort() method was used
+Calling the function with the specified array of users returns a new array of users sorted by name in alphabetical order
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const sortByName = users => {
+
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const sortByName = users => [...users].sort((userA, userB) => userA.name.localeCompare(userB.name));
+// Change code above this line
+
+console.log(
+*/
+
+// RESULT
+/*
+The variable `sortByName` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `sortByName`
+The value of the `users` parameter is not changed
+To iterate over the `users` parameter, the `sort()` method was used
+Calling the function with the specified array of users returns a new array of users sorted by name in alphabetical order
+Calling a function with random but valid arguments returns the correct value
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 45/48  Status: Done
+
+/*
+** THEORY
+There is an array of objects with names, grades and сourses attended by each student.
+
+const students = [
+  { name: "Mango", score: 83, courses: ["mathematics", "physics"] },
+  { name: "Poly", score: 59, courses: ["science", "mathematics"] },
+  { name: "Ajax", score: 37, courses: ["physics", "biology"] },
+  { name: "Kiwi", score: 94, courses: ["literature", "science"] },
+];
+You need to get an array of their names sorted in ascending order of test scores. To do this, we will sort the copy of the array using the sort() method, and then, using the map() method, compose an array of the values ​​of the name property from the sorted
+
+array.
+
+const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+const names = sortedByAscendingScore.map(student => student.name);
+
+console.log(names); // ["Ajax", "Poly", "Mango", "Kiwi"]
+The problem is that we have intermediate variables after each operation except the final one. The sortedByAscendingScore variable is superfluous and is only needed to store the intermediate result.
+
+You can get rid of such "dead" variables by grouping method calls into chains. Each next method will be executed on the result of the work of the previous one.
+
+const names = [...students]
+  .sort((a, b) => a.score - b.score)
+  .map(student => student.name);
+
+console.log(names); // ["Ajax", "Poly", "Mango", "Kiwi"]
+Make a copy of the original array before sorting.
+Call the sort() method on the copy.
+Apply the map() method to the result of the sort() method.
+The names variable is assigned the result of the map() method.
+Let's get an alphabetically sorted array of unique visited courses.
+
+const uniqueSortedCourses = students
+  .flatMap(student => student.courses)
+  .filter((course, index, array) => array.indexOf(course) === index)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(uniqueSortedCourses); // ["biology", "science", "literature", "mathematics", "physics"]
+On the original array, call flatMap() and create a flattened array of all courses.
+Apply the filter() method to the result of the flatMap() method to filter unique elements.
+On the result of the filter() method, call sort().
+The result of the sort() method is assigned to the uniqueSortedCourses variable .
+The method chaining can be of arbitrary length, but usually no more than 2-3 operations. First, iteration methods are used for relatively simple collection operations. Secondly, the call of each subsequent method is an additional iteration over the array which with a sufficient number can affect performance.
+
+** TASK
+Modify the code so that the names variable contains an array of names of authors in alphabetical order, whose books have a rating higher than the value of the MIN_BOOK_RATING variable.
+
+** Test
+The variable books is declared
+The value of the variable books is the original array of objects
+The variable MIN_BOOK_RATING is declared
+The value of the variable MIN_BOOK_RATING is the number 8
+The variable names is declared
+The value of the variable names is the array ["Bernard Cornwell", "Howard Lovecraft", "Robert Sheckley"]
+No declared variables other than books, MIN_BOOK_RATING and names
+The method chaining filter, map, sort is used
+
+ */
+
+// Javascript Editor:
+// START
+/*
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = books;
+
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+'use strict';
+
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dreams in the Witch House',
+    author: 'Howard Lovecraft',
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = books
+  .filter((book) => book.rating > MIN_BOOK_RATING)
+  .sort((bookA, bookB) => bookA.author.localeCompare(bookB.author))
+  .map((book) => book.author);
+
+console.log(names);
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 45/48
+The variable `books` is declared
+The variable `MIN_BOOK_RATING` is declared
+The variable `names` is declared
+The value of the variable `books` is the original array of objects
+The value of the variable `MIN_BOOK_RATING` is the number `8`
+The value of the variable `names` is the array `['Bernard Cornwell', 'Howard Lovecraft', 'Robert Sheckley']`
+No declared variables other than `books`, `MIN_BOOK_RATING` and `names`
+The method chaining `filter`, `map`, `sort` is used
+
+Result of code execution:
+[ 'Bernard Cornwell', 'Howard Lovecraft', 'Robert Sheckley' ]
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 46/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+const users =
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the getNamesSortedByFriendCount(users) function so that it returns an array of usernames sorted in ascending order by the number of their friends (the friends property).
+
+** Test
+The variable getNamesSortedByFriendCount is declared
+An arrow function with the parameter (users) is assigned to the variable getNamesSortedByFriendCount
+The body of the function uses chaining methods
+The value of the users parameter is not changed
+Calling the function with the specified user array returns the array ["Moore Hensley", "Sharlene Bush", "Elma Head", "Sheree Anthony", "Ross Vazquez", "Carey Barr", "Blackburn Dotson"]
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const getNamesSortedByFriendCount = users => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const getNamesSortedByFriendCount = users => {
+   
+};
+// Change code above this line
+
+const getNamesSortedByFriendCount = users => users.sort((userA, userB) => userA.friends.length - userB.friends.length)
+  .map((user) => user.name);
+
+console.log(getNamesSortedByFriendCount(users));
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 46/48
+The variable `getNamesSortedByFriendCount` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `getNamesSortedByFriendCount`
+The body of the function uses chaining methods
+The value of the `users` parameter is not changed
+Calling the function with the specified user array returns the array `['Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Sheree Anthony', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson']`
+Calling a function with random but valid arguments returns the correct value
+
+Result of code execution:
+['Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Sheree Anthony', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson']
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 47/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the getSortedFriends (users) function so that it returns an array of unique friends' names (the friends property) sorted alphabetically.
+
+** Test
+The variable getSortedFriends is declared
+An arrow function with the parameter (users) is assigned to the variable getSortedFriends
+The body of the function uses the chaining methods in the correct order
+The value of the users parameter is not changed
+Calling the function with the specified user array returns the array ["Adrian Cross", "Aisha Tran", "Briana Decker", "Eddie Strong", "Goldie Gentry", "Jacklyn Lucas", "Jordan Sampson", "Linda Chapman", "Marilyn Mcintosh", "Naomi Buckner", "Padilla Garrison", "Sharron Pace", "Solomon Fokes"]
+Calling a function with random but valid arguments returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const getSortedFriends = users => {
+   
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const getSortedFriends = users => {
+   
+};
+// Change code above this line
+
+
+const getSortedFriends = users=> users
+  .flatMap(user => user.friends)
+  .filter((user, index, array) => array.indexOf(user) === index)
+  .sort((userA, userB) => userA.localeCompare(userB));
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 47/48
+The variable `getSortedFriends` is declared
+An arrow function with the parameter `(users)` is assigned to the variable `getSortedFriends`
+The body of the function uses the chaining methods in the correct order
+The value of the `users` parameter is not changed
+Calling the function with the specified user array returns the array `['Adrian Cross', 'Aisha Tran', 'Briana Decker', 'Eddie Strong', 'Goldie Gentry', 'Jacklyn Lucas', 'Jordan Sampson', 'Linda Chapman', 'Marilyn Mcintosh', 'Naomi Buckner', 'Padilla Garrison', 'Sharron Pace', 'Solomon Fokes']`
+Calling a function with random but valid arguments returns the correct value
+
+Result of code execution:
+(13) ['Adrian Cross', 'Aisha Tran', 'Briana Decker', 'Eddie Strong', 'Goldie Gentry', 'Jacklyn Lucas', 'Jordan Sampson', 'Linda Chapman', 'Marilyn Mcintosh', 'Naomi Buckner', 'Padilla Garrison', 'Sharron Pace', 'Solomon Fokes']
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-4 Autochecking  ASSIGNMENT 48/48  Status: Done
+
+/*
+** THEORY
+We will pass this array of objects to the users parameter when calling the function in the task.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+** TASK
+Modify the getTotalBalanceByGender (users, gender) function so that it returns the total balance of users (the balance property) whose gender (the gender property) matches the value of the gender parameter..
+
+** Test
+The variable getTotalBalanceByGender is declared
+An arrow function with parameters (users, gender) is assigned to the variable getTotalBalanceByGender
+The body of the function uses the methods chained in the correct order
+The value of the users parameter is not changed
+If the value of the parameter gender is the string "male", the function returns the number 12053
+If the value of the gender parameter is the string "female", the function returns the number 8863
+Calling a function with random but valid arguments, returns the correct value
+
+ */
+
+// Javascript Editor:
+// START
+/*
+// Change code below this line
+const getTotalBalanceByGender = (users, gender) => {
+
+};
+// Change code above this line
+*/
+
+// Javascript Editor:
+// FINISH
+/*
+// Change code below this line
+const getTotalBalanceByGender = (users, gender) =>
+  users
+    .filter((user) => user.gender === gender)
+    .reduce((totalBalance, user) => {
+      return totalBalance + user.balance;
+    }, 0);
+// Change code above this line
+
+console.log(
+*/
+
+// RESULT
+/*
+Result
+
+Done
+
+Assignment 48/48
+The variable `getTotalBalanceByGender` is declared
+An arrow function with parameters `(users, gender)` is assigned to the variable `getTotalBalanceByGender`
+The body of the function uses the methods chaining in the correct order
+The value of the `users` parameter is not changed
+If the value of the parameter `gender` is the string `male`, the function returns the number `12053`
+If the value of the `gender` parameter is the string `female`, the function returns the number `8863`
+Calling a function with random but valid arguments, returns the correct value
+
+Result of code execution:
+Male: 12053.
+Female: 8863.
+12053
+8863
 */
