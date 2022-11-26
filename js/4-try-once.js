@@ -1,18 +1,351 @@
 'use strict';
 
-/*
-const LOW_SCORE = 50;
-const HIGH_SCORE = 80;
-const students = [
-  { name: 'Mango', score: 83 },
-  { name: 'Poly', score: 59 },
-  { name: 'Ajax', score: 37 },
-  { name: 'Kiwi', score: 94 },
-  { name: 'Houston', score: 64 },
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: [
+      'Jacklyn Lucas',
+      'Linda Chapman',
+      'Adrian Cross',
+      'Solomon Fokes',
+    ],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
 ];
 
-const best = students.filter((student) => student.score >= HIGH_SCORE);
-console.log(best); // Array of objects named Mango and Kiwi
+const getUserByGender = (users, gender) =>
+  users.filter((user) => user.gender === gender);
+
+console.log(getUserByGender(users, 'male'));
+console.log(getUserByGender(users, 'female'));
+
+const getTotalBalanceByGender = (users, gender) =>
+  users
+    .filter((user) => user.gender === gender)
+    .reduce((totalBalance, user) => {
+      return totalBalance + user.balance;
+    }, 0);
+
+console.log(`Male: ${getTotalBalanceByGender(users, 'male')}.`);
+console.log(`Female: ${getTotalBalanceByGender(users, 'female')}.`);
+console.log(getTotalBalanceByGender(users, 'male'));
+console.log(getTotalBalanceByGender(users, 'female'));
+
+/*
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: [
+      'Jacklyn Lucas',
+      'Linda Chapman',
+      'Adrian Cross',
+      'Solomon Fokes',
+    ],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
+];
+
+const getSortedFriends = (users) =>
+  users
+    .flatMap((user) => user.friends)
+    .filter((user, index, array) => array.indexOf(user) === index)
+    .sort((userA, userB) => userA.localeCompare(userB));
+
+console.log(getSortedFriends(users));
+*/
+
+/*
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: [
+      'Jacklyn Lucas',
+      'Linda Chapman',
+      'Adrian Cross',
+      'Solomon Fokes',
+    ],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
+];
+
+const getNamesSortedByFriendCount = (users) =>
+  [...users]
+    .sort((userA, userB) => userA.friends.length - userB.friends.length)
+    .map((user) => user.name);
+
+console.log(getNamesSortedByFriendCount(users));
+*/
+
+/*
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dreams in the Witch House',
+    author: 'Howard Lovecraft',
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = books
+  .filter((book) => book.rating > MIN_BOOK_RATING)
+  .sort((bookA, bookB) => bookA.author.localeCompare(bookB.author))
+  .map((book) => book.author);
+
+console.log(names);
+*/
+
+/*
+// Change code below this line
+const getTotalFriendCount = (users) =>
+  users.reduce((totalFriends, user) => {
+    return totalFriends + user.friends.length;
+  }, 0);
+// Change code above this line
+*/
+/*
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
+
+const anyElementInFirstIsEven = firstArray.some((value) => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some((value) => value % 2 !== 0);
+
+const anyElementInSecondIsEven = secondArray.some((value) => value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some((value) => value % 2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some((value) => value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some((value) => value % 2 !== 0);
+
+console.log(anyElementInFirstIsEven);
+console.log(anyElementInFirstIsOdd);
+
+console.log(anyElementInSecondIsEven);
+console.log(anyElementInSecondIsOdd);
+
+console.log(anyElementInThirdIsEven);
+console.log(anyElementInThirdIsOdd);
+*/
+
+/*
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
+
+const bookWithTitle = (books) =>
+  books.find((book) => book.title === BOOK_TITLE); //
+const bookByAuthor = (books) => books.find((book) => book.author === AUTHOR); //
+
+console.log(bookWithTitle(books));
+console.log(bookByAuthor(books));
 */
 
 /*
@@ -116,13 +449,64 @@ const users = [
 // console.log(getUsersWithAge(users, 30, 40));
 // console.log(getUsersWithAge(users, 80, 100));
 
-const getUsersWithFriend = (users, friendName) =>
-  users.filter((user) => user.friends.includes(friendName));
+// const getUsersWithFriend = (users, friendName) =>
+//   users.filter((user) => user.friends.includes(friendName));
 
-console.log(getUsersWithFriend(users, 'Briana Decker'));
-console.log(getUsersWithFriend(users, 'Goldie Gentry'));
-console.log(getUsersWithFriend(users, 'Adrian Cross'));
+// console.log(getUsersWithFriend(users, 'Briana Decker'));
+// console.log(getUsersWithFriend(users, 'Goldie Gentry'));
+// console.log(getUsersWithFriend(users, 'Adrian Cross'));
 
+// const getAllFriends = users.flatMap((user) => user.friends);
+// console.log(getAllFriends);
+
+// const getFriends = getAllFriends.filter(
+//   (friend, index, array) => array.indexOf(friend) === index
+// );
+
+// const getFriends = (users) =>
+//   users
+//     .flatMap((user) => user.friends)
+//     .filter((friend, index, array) => array.indexOf(friend) === index);
+
+// console.log(getFriends(users));
+
+// const getActiveUsers = (users) =>
+//   users.filter((user) => user.isActive === true);
+
+// console.log(getActiveUsers(users));
+
+// const getInactiveUsers = (users) =>
+//   users.filter((user) => user.isActive === false);
+
+// console.log(getInactiveUsers(users));
+
+// const getUserWithEmail = (users, email) =>
+//   users.find((user) => user.email === email);
+
+// console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
+// console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
+// console.log(getUserWithEmail(users, 'blackburndotson@furnigeer.com'));
+
+// const isEveryUserActive = (users) =>
+//   users.every((user) => user.isActive === true);
+
+// console.log(isEveryUserActive(users));
+
+*/
+
+/*
+const LOW_SCORE = 50;
+const HIGH_SCORE = 80;
+const students = [
+  { name: 'Mango', score: 83 },
+  { name: 'Poly', score: 59 },
+  { name: 'Ajax', score: 37 },
+  { name: 'Kiwi', score: 94 },
+  { name: 'Houston', score: 64 },
+];
+
+const best = students.filter((student) => student.score >= HIGH_SCORE);
+console.log(best); // Array of objects named Mango and Kiwi
 */
 
 /*
